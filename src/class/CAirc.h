@@ -30,4 +30,9 @@ class CAirc
 	float getManVal();
 };
 
+//Testing with inheritance for a new aircraft type
+class CAirc_TESTTYPE : private CAirc
+{
+	mAircName
+};
 #endif
