@@ -1,7 +1,7 @@
-#ifndef CAIRC_H
-#define CAIRC_H
+#ifndef C_AIRC_H
+#define C_AIRC_H
 
-class CAirc
+class c_airc
 {
 	//Base Attributes
 	char* mAircName;
@@ -28,11 +28,5 @@ class CAirc
 	float getAtkVal();
 	float getDefVal();
 	float getManVal();
-};
-
-//Testing with inheritance for a new aircraft type
-class CAirc_TESTTYPE : private CAirc
-{
-	mAircName
 };
 #endif

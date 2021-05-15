@@ -1,10 +1,10 @@
-#ifndef "GAME_H"
-#define
+#ifndef GAME_H
+#define GAME_H
 
 #include <iostream>
 #include <string>
 
     void runGame();
-    void playerIn(unsigned short positions[i][j]); //only takes in forward, climb or descent or attack as input.
-    void arrayPositions
+    void playerIn(); //only takes in forward, climb or descent or attack as input.
+    void arrayPositions();
 #endif
