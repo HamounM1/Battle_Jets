@@ -25,8 +25,8 @@
 
 class c_board
 {
-	int mDimX;
-	int mDimY;
+	int mDimRw;
+	int mDimCl;
 	int* mBoard;
 
  public:
@@ -38,7 +38,7 @@ class c_board
 	void setTile(int nTileValue, int posX, int posY);
 
 	int getTile(int posX, int posY);
-	int getDimX();
-	int getDimY();
+	int getDimRw();
+	int getDimCl();
 };
 #endif
