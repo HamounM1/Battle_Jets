@@ -3,8 +3,10 @@
 //C and C++ Standard libraries
 #include <iostream>
 
-//Classes
+//Local
 #include "class/c_airc.h"
-//Other
+#include "class/c_board.h"
+#include "class/c_pilot.h"
 #include "game.h"
+
 #endif
