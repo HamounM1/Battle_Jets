@@ -25,14 +25,20 @@
 
 class c_board
 {
-    int mDimX;
-    int mDimY;
-    int* mBoard;
+	int mDimX;
+	int mDimY;
+	int* mBoard;
 
-public:
-    c_board();
+ public:
+	c_board();
+	c_board(int dimX, int dimY);
 
-    void setTile(int nTileValue, int posX, int posY);
-    int getTile(int posX, int posY);
-}
+	~c_board();
+
+	void setTile(int nTileValue, int posX, int posY);
+
+	int getTile(int posX, int posY);
+	int getDimX();
+	int getDimY();
+};
 #endif
