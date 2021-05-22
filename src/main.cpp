@@ -1,15 +1,20 @@
-#include "main.h"
+//C and C++ Standard libraries
+#include <iostream>
+
+//Local
+#include "game.h"
+
+bool stateActive = false;
+c_board mainBoard(10, 10);
 
 int main()
 {
-	//Promt the user
 	std::cout << "Welcome to the game!" << std::endl;
 
-	//Run the game loop
-	gameInit();
-	while(gameStateActive == true)
+	stateActive = stateInit(&mainBoard);
+	while(stateActive == true)
 	{
-		gameStateUpdate();
+		stateUpdate();
 	}
 
 	return 0;

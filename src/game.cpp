@@ -1,26 +1,50 @@
 #include "game.h"
 
-void drawBoard()
+c_board* boardTarget;
+
+bool stateInit(c_board* target)
 {
-	for(int row = 0; row < currentGameBoard.getDimRw; row++)
+	boardTarget = target;
+
+	boardInit();
+	//TODO
+	//Set the position of the player
+	//Set the position of the enemy
+	return true;
+}
+
+void boardInit()
+{
+	for(int row = 0; row < boardTarget->getDimRw(); row++)
 	{
-		for(int col = 0; col < currentGameBoard.getDimCl; col++)
+		for(int col = 0; col < boardTarget->getDimCl(); col++)
 		{
-			if(currentGameBoard.getTile(row, col) == TILE_PILOT_P)
+			boardTarget->setTile(TILE_EMPTY, row, col);
+		}
+	}
+}
+
+void boardUpdate()
+{
+	for(int row = 0; row < boardTarget->getDimRw(); row++)
+	{
+		for(int col = 0; col < boardTarget->getDimCl(); col++)
+		{
+			if(boardTarget->getTile(row, col) == TILE_PILOT_P)
 			{
 				std::cout << "<P>";
 			}
-			else if(currentGameBoard.getTile(row, col) == TILE_PILOT_E)
+			else if(boardTarget->getTile(row, col) == TILE_PILOT_E)
 			{
 				std::cout << "<E>";
 			}
-			else if(currentGameBoard.getTile(row, col) == TILE_EMPTY)
+			else if(boardTarget->getTile(row, col) == TILE_EMPTY)
 			{
 				std::cout << "   ";
 			}
 			else
 			{
-				std::cout << "<\>";
+				std::cout << "TILE_ERROR";
 			}
 		}
 
@@ -28,25 +52,60 @@ void drawBoard()
 	}
 }
 
-void gameInit()
+int userGenActionCode()
 {
-	for(int row = 0; row < currentGameBoard.getDimRw; row++)
-	{
-		for(int col = 0; col < currentGameBoard.getDimCl; col++)
-		{
-			currentGameBoard.setTile(TILE_EMPTY, row, col);
-		}
-	}
+	char option;
+	std::cout << "Ascend [U]:\nDescend [D]:\n\nAction: ";
+	std::cin >> option;
 
-	//POSITIONING THE PLAYER AND ENEMY IN THIS WAY IS NOT PERMANENT
-	//POSITIONING WILL BE DONE VIA THE PILOT CLASS!
-	currentGameBoard.setTile(TILE_PILOT_P, 5, 1);
-	currentGameBoard.setTile(TILE_PILOT_E, 5, 9);
+	if(option == 'U' || option == 'u')
+	{
+		return 0xAA;
+	}
+	else if(option == 'D' || option == 'd')
+	{
+		return 0xAD;
+	}
+	else
+	{
+		return 0xA0;
+	}
 }
 
-void gameStateUpdate()
+int compGenActionCode()
 {
-	std::cout << "Player options will be displayed";
-	std::cin >> gameInputPlayer;
-	std::cout << "Game will do that option" << std::endl;
+	//TODO Hamoun's AI code goes here
+	return 0xA0;	//For now return no action
+}
+
+void perfAction(int code)
+{
+	switch(code)
+	{
+	 case PLAYER_ACTION_ASCEND:
+		std::cout << "Ascend" << std::endl;
+		//TODO code for ascending
+		break;
+	 case PLAYER_ACTION_DSCEND:
+		std::cout << "Descend" << std::endl;
+		//TODO code for descending
+		break;
+	 case PLAYER_ACTION_NOACTION:
+		std::cout << "No action" << std::endl;
+		break;
+	}
+}
+
+void stateUpdate()
+{
+	//Generate the action code of the user and the enemy
+	int userActionCode = userGenActionCode();
+	int compActionCode = compGenActionCode();
+
+	//Perform said actions
+	perfAction(userActionCode);
+	perfAction(compActionCode);
+
+	//Show those actions on an updated board
+	boardUpdate();
 }
