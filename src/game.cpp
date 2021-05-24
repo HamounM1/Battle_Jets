@@ -89,10 +89,54 @@ int userGenActionCode()
 
 int compGenActionCode()
 {
-	//HAMOUN CODE HERE
-	//MAKE SURE TO USE NEW ACTIONS CODES
-	//ENEMY_ACTION_XXXXX
-	return ACTION_NOACTION;	//For now return no action
+	srand(time(0));
+	int randNum = rand()%100;
+
+	if (pilotEnemy.getCl()>pilotPlayer.getCl())
+	{
+		if (0 <= randNum && randNum > 70)
+		{
+			return ACTION_ASCEND;//ascend
+		}
+		else if (70 <= randNum && randNum < 85)
+		{
+			return ACTION_DESCEND;//descend
+		}
+		else if (85 <= randNum && randNum < 100)
+		{
+			return ACTION_ATTACK;//attack
+		}
+	}
+	else if (pilotEnemy.getCl()<pilotPlayer.getCl())
+	{
+		if (0 <= randNum && randNum < 70)
+		{
+			return ACTION_DESCEND;//descend
+		}
+		else if (70 <= randNum && randNum < 85)
+		{
+			return ACTION_ASCEND;//ascend
+		}
+		else if (85 <= randNum && randNum < 100)
+		{
+			return ACTION_ATTACK;//attack
+		}
+	}
+	else if (pilotEnemy.getRw() == pilotPlayer.getRw())
+	{
+		if (0 <= randNum && randNum < 0)
+		{
+			return ACTION_ATTACK;//attack;
+		}
+		else if (70 <= randNum && randNum < 85)
+		{
+			return ACTION_ASCEND;//ascend
+		}
+		else if (85 <= randNum && randNum < 100)
+		{
+			return ACTION_DESCEND;//descend
+		}
+	}
 }
 
 void pilotOffset(c_pilot* pilotTarget, int offsetRw, int offsetCl)
