@@ -55,27 +55,31 @@ void boardUpdate()
 int userGenActionCode()
 {
 	char option;
-	std::cout << "Ascend [W]:\nDescend [S]:\n\nAction: ";
+	std::cout << "Ascend [W]:\nDescend [S]:\n ATTACK [A]\n\nAction: ";
 	std::cin >> option;
 
 	if(option == 'W' || option == 'w')
 	{
-		return 0xAA;
+		return PLAYER_ACTION_ASCEND;
 	}
 	else if(option == 'S' || option == 's')
 	{
-		return 0xAD;
+		return PLAYER_ACTION_DESCEND;
+	}
+	else if(option == 'A' || option == 'a')
+	{
+		return PLAYER_ACTION_ATTACK;
 	}
 	else
 	{
-		return 0xA0;
+		return PLAYER_ACTION_NOACTION;
 	}
 }
 
 int compGenActionCode()
 {
 	//TODO Hamoun's AI code goes here
-	return 0xA0;	//For now return no action
+	return PLAYER_ACTION_NOACTION;	//For now return no action
 }
 
 void perfAction(int code)
@@ -86,10 +90,17 @@ void perfAction(int code)
 		std::cout << "Ascend" << std::endl;
 		//TODO code for ascending
 		break;
+
 	 case PLAYER_ACTION_DSCEND:
 		std::cout << "Descend" << std::endl;
 		//TODO code for descending
 		break;
+
+	 case PLAYER_ACTION_ATTACK:
+		std::cout << "Attack" << std:: endl;
+		//TODO code for attacking
+		break;
+
 	 case PLAYER_ACTION_NOACTION:
 		std::cout << "No action" << std::endl;
 		break;

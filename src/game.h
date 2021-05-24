@@ -35,7 +35,7 @@
 
 #define PLAYER_ACTION_NOACTION 0xA0	//An action code assigned when no action is taken
 
-#define PLAYER_ACTION_ATTACK 0xAA	//An action code for attack
+#define PLAYER_ACTION_ATTACK 0xAB	//An action code for attack
 #define PLAYER_ACTION_ASCEND 0xAA		//Action for up
 #define PLAYER_ACTION_DSCEND 0xAD		//Action for down
 
