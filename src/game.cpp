@@ -2,14 +2,21 @@
 
 c_board* boardTarget;
 
+c_pilot pilotPlayer;
+c_pilot pilotEnemy;
+
 bool stateInit(c_board* target)
 {
 	boardTarget = target;
-
 	boardInit();
-	//TODO
-	//Set the position of the player
-	//Set the position of the enemy
+
+	pilotPlayer.setType(TILE_PILOT_P);
+	pilotPosition(&pilotPlayer, 5, 0);
+
+	pilotEnemy.setType(TILE_PILOT_E);
+	pilotPosition(&pilotEnemy, 5, 9);
+
+	boardUpdate();
 	return true;
 }
 
@@ -55,67 +62,94 @@ void boardUpdate()
 int userGenActionCode()
 {
 	char option;
-	std::cout << "Ascend [W]:\nDescend [S]:\nATTACK [A]\n\nAction: ";
+	std::cout << "Ascend [W]:\nDescend [S]:\n Primary Attack [1]:\nSecondary Attack [2]:\nAction: ";
 	std::cin >> option;
 
 	if(option == 'W' || option == 'w')
 	{
-		return PLAYER_ACTION_ASCEND;
+		return ACTION_ASCEND;
 	}
 	else if(option == 'S' || option == 's')
 	{
-		return PLAYER_ACTION_DESCEND;
+		return ACTION_DESCEND;
 	}
-	else if(option == 'A' || option == 'a')
+	else if(option == '1')
 	{
-		return PLAYER_ACTION_ATTACK;
+		return ACTION_ATTACK;
+	}
+	else if(option == '2')
+	{
+		return ACTION_ATTACKSEC;
 	}
 	else
 	{
-		return PLAYER_ACTION_NOACTION;
+		return ACTION_NOACTION;
 	}
 }
 
 int compGenActionCode()
 {
-	//TODO Hamoun's AI code goes here
-	return PLAYER_ACTION_NOACTION;	//For now return no action
+	//HAMOUN CODE HERE
+	//MAKE SURE TO USE NEW ACTIONS CODES
+	//ENEMY_ACTION_XXXXX
+	return ACTION_NOACTION;	//For now return no action
 }
 
-void perfAction(int code)
+void pilotOffset(c_pilot* pilotTarget, int offsetRw, int offsetCl)
+{
+	boardTarget->setTile(TILE_EMPTY, pilotTarget->getRw(), pilotTarget->getCl());
+	pilotTarget->setPosition(pilotTarget->getRw() + offsetRw, pilotTarget->getCl() + offsetCl);
+
+	boardTarget->setTile(pilotTarget->getType(), pilotTarget->getRw(), pilotTarget->getCl());
+}
+
+void pilotPosition(c_pilot* pilotTarget, int posRw, int posCl)
+{
+	boardTarget->setTile(TILE_EMPTY, pilotTarget->getRw(), pilotTarget->getCl());
+	pilotTarget->setPosition(posRw, posCl);
+
+	boardTarget->setTile(pilotTarget->getType(), pilotTarget->getRw(), pilotTarget->getCl());
+}
+
+void perfAction(int code, c_pilot* pilotTarget)
 {
 	switch(code)
 	{
-	 case PLAYER_ACTION_ASCEND:
-		std::cout << "Ascend" << std::endl;
-		//TODO code for ascending
+	 case ACTION_NOACTION:
 		break;
 
-	 case PLAYER_ACTION_DESCEND:
-		std::cout << "Descend" << std::endl;
-		//TODO code for descending
-		break;
-
-	 case PLAYER_ACTION_ATTACK:
+	 case ACTION_ATTACK:
 		std::cout << "Attack" << std:: endl;
 		//TODO code for attacking
 		break;
 
-	 case PLAYER_ACTION_NOACTION:
-		std::cout << "No action" << std::endl;
+	 case ACTION_ATTACKSEC:
+		std::cout << "Attack Sec" << std::endl;
+		break;
+
+	 case ACTION_ASCEND:
+		pilotOffset(pilotTarget, -1, 0);
+		break;
+
+	 case ACTION_DESCEND:
+		pilotOffset(pilotTarget, 1, 0);
 		break;
 	}
 }
 
 void stateUpdate()
 {
+
+	pilotOffset(&pilotPlayer, 0, 1);
+	pilotOffset(&pilotEnemy, 0, -1);
+
 	//Generate the action code of the user and the enemy
 	int userActionCode = userGenActionCode();
 	int compActionCode = compGenActionCode();
 
 	//Perform said actions
-	perfAction(userActionCode);
-	perfAction(compActionCode);
+	perfAction(userActionCode, &pilotPlayer);
+	perfAction(compActionCode, &pilotEnemy);
 
 	//Show those actions on an updated board
 	boardUpdate();
