@@ -91,7 +91,7 @@ void perfAction(int code)
 		//TODO code for ascending
 		break;
 
-	 case PLAYER_ACTION_DSCEND:
+	 case PLAYER_ACTION_DESCEND:
 		std::cout << "Descend" << std::endl;
 		//TODO code for descending
 		break;
