@@ -37,7 +37,7 @@
 
 #define PLAYER_ACTION_ATTACK 0xAB	//An action code for attack
 #define PLAYER_ACTION_ASCEND 0xAA		//Action for up
-#define PLAYER_ACTION_DSCEND 0xAD		//Action for down
+#define PLAYER_ACTION_DESCEND 0xAD		//Action for down
 
 //Variables
 bool stateInit(c_board* target);	//Creates the initial state, returns true on successful initialisation
