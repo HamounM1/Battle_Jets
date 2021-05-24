@@ -55,7 +55,7 @@ void boardUpdate()
 int userGenActionCode()
 {
 	char option;
-	std::cout << "Ascend [W]:\nDescend [S]:\n ATTACK [A]\n\nAction: ";
+	std::cout << "Ascend [W]:\nDescend [S]:\nATTACK [A]\n\nAction: ";
 	std::cin >> option;
 
 	if(option == 'W' || option == 'w')
