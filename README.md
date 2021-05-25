@@ -1,7 +1,7 @@
 # DELEGATION (CURRENT):
-	HAMOUN - 4. Enemy behaviour
-	THARANE - 3. Basic game loop
-	IZAK - 1. Aircraft class, Board class
+	HAMOUN - 4. Preventing the planes from leaving the board ( bug fixing )
+	THARANE - 3. Aircraft types (in c_airc.h/c_airc.cpp)
+	IZAK - 1. Aircraft class
 # COMPILING THE PROJECT : 
 	type 'make' into the terminal to build the executable from current code
 	type 'make clean' into the terminal to clean up files generated from 'make'
