@@ -4,7 +4,11 @@
 class c_airc
 {
  public:
-    c_airc();
+
+        int mDamage;
+        int mManeuverability;
+        int
+
 };
 
 #endif

@@ -57,8 +57,17 @@ void boardUpdate()
 
 		std::cout << std::endl;
 	}
-}
 
+	int rowE = pilotEnemy.getRw();
+	int colE = pilotEnemy.getCl();
+	int rowP = pilotPlayer.getRw();
+	int colP = pilotPlayer.getCl();
+	if (colP - colE >= 2)
+	{
+		pilotPosition(&pilotEnemy, rowE, boardTarget->getDimCl());
+		pilotPosition(&pilotPlayer, rowP, 0);
+	}
+}
 int userGenActionCode()
 {
 	char option;
