@@ -15,6 +15,7 @@
 
 //C/C++ Standard Libraries
 #include <iostream>
+#include <cstdlib>
 
 //Local includes
 #include "class/c_board.h"

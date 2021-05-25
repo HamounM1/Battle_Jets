@@ -6,7 +6,7 @@ c_board::c_board()
 	mDimRw = 0;
 	mDimCl = 0;
 
-	mBoard = nullptr;
+	mBoard = 0;
 }
 
 c_board::c_board(int dimX, int dimY)
@@ -24,7 +24,7 @@ c_board::~c_board()
 	//Free the memory allocated on the heap to store the board
 	//Assign the pointer to nullptr
 	delete[] mBoard;
-	mBoard = nullptr;
+	mBoard = 0;
 }
 
 void c_board::setTile(int nTileValue, int posX, int posY)

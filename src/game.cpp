@@ -196,5 +196,6 @@ void stateUpdate()
 	perfAction(compActionCode, &pilotEnemy);
 
 	//Show those actions on an updated board
+	std::system("clear");
 	boardUpdate();
 }

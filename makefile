@@ -3,7 +3,7 @@
 
 #VARIABLES
 CC = g++
-CC_FLAGS = -Wall -Werror
+CC_FLAGS = -Wall -Werror -std=c99
 
 #TARGETS
 all: obj main						#DEFAULT TARGET : requires relocatables folder (obj) and an executable (main)
