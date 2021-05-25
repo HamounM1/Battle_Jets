@@ -1,0 +1,42 @@
+Aircraft stats British:
+- Supermarine Spitfire
+    Armourment: 8 x 7.69mm machine guns
+    Climb Rate: 13.0 m/s
+    Max Velocity: 320 kn
+
+- Hawker Typhoon Mk Ib
+    Armourment: 4 × 20 mm guns
+    Climb Rate: 13.9 m/s
+    Max Velocity: 358 kn
+
+- Westland Whirlwind
+    Armourment: 4 x 20mm cannons
+    Climb Rate: 13.0 m/s
+    Max Velocity: 310 kn
+
+
+Aircraft stats Germany:
+- Junkers Ju 288
+    Armourment: 4 × 13 mm machine guns
+                1 × 15 mm cannon
+    Climb Rate: 8.2 m/s
+    Max Velocity: 354 kn
+
+- Arado Ar 240
+    Armourment: 2 × 7.92 mm machine guns
+    Climb Rate: 9.1 m/s
+    Max Velocity: 334 kn
+
+- Focke-Wulf Fw 190
+    Armourment: 2 × 13 mm machine guns
+                2 × 20 mm cannons
+                2 x 20 mm cannons
+    Climb Rate: 15.0 m/s
+    Max Velocity: 352 kn
+
+
+Damage = Num guns x mm of guns
+
+maneuverability = rate/climb x max velocity
+
+hit chance = base 0.3 / maneuverability * distance
