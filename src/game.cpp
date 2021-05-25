@@ -92,7 +92,7 @@ int compGenActionCode()
 	srand(time(0));
 	int randNum = rand()%100;
 
-	if (pilotEnemy.getCl()>pilotPlayer.getCl())
+	if (pilotEnemy.getRw() > pilotPlayer.getRw())
 	{
 		if (0 <= randNum && randNum > 70)
 		{
@@ -107,7 +107,7 @@ int compGenActionCode()
 			return ACTION_ATTACK;//attack
 		}
 	}
-	else if (pilotEnemy.getCl()<pilotPlayer.getCl())
+	else if (pilotEnemy.getRw() < pilotPlayer.getRw())
 	{
 		if (0 <= randNum && randNum < 70)
 		{
@@ -124,7 +124,7 @@ int compGenActionCode()
 	}
 	else if (pilotEnemy.getRw() == pilotPlayer.getRw())
 	{
-		if (0 <= randNum && randNum < 0)
+		if (0 <= randNum && randNum < 70)
 		{
 			return ACTION_ATTACK;//attack;
 		}
