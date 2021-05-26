@@ -15,6 +15,8 @@ class c_airc
         float mWeap;    //Ammunition size (in mm)
         int mWeapNum;   //Number of weapons
 
+        //The same as before but for any secondary weapons
+        //If there are no secondary weapons just leave both values as zero
         float mWeapSec;         //Ammunition size (in mm)
         int mWeapSecNum;        //Number of secondary weapons
  public:
@@ -42,5 +44,5 @@ struct test_aircraft_type2 : public c_airc
 //Follow the template i've given here with the test_aircraft_type
 //You only need to declare a struct (same as class but by default public) with a default constructor
 //THEN go into c_airc.cpp and then define the relevent stats in its default constructor and voila, new aircraft type!
-
+//The stats you need to define are above in the base class c_airc under the 'protected:'' specificer
 #endif
