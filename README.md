@@ -1,6 +1,13 @@
 # DELEGATION (CURRENT):
 	HAMOUN - 4. Preventing the planes from leaving the board ( bug fixing )
 	THARANE - 3. Aircraft types (in c_airc.h/c_airc.cpp)
+			note: when creating aircraft types
+			lets say you want to add the spitfire in, please do it like
+			
+	name the classes ---->	struct supermarine_spitfire : public c_airc
+	in the format:		{
+	manufacturer_name		supermarine_spitfire(); <----- in c_airc.cpp you define all the stats
+				}
 	IZAK - 1. Implementing the attack action (ACTION_ATTACK and ACTION_ATTACKSEC)
 # COMPILING THE PROJECT : 
 	type 'make' into the terminal to build the executable from current code
