@@ -1,7 +1,7 @@
 # DELEGATION (CURRENT):
 	HAMOUN - 4. Preventing the planes from leaving the board ( bug fixing )
 	THARANE - 3. Aircraft types (in c_airc.h/c_airc.cpp)
-	IZAK - 1. Aircraft class
+	IZAK - 1. Implementing the attack action (ACTION_ATTACK and ACTION_ATTACKSEC)
 # COMPILING THE PROJECT : 
 	type 'make' into the terminal to build the executable from current code
 	type 'make clean' into the terminal to clean up files generated from 'make'
