@@ -30,14 +30,39 @@ class c_airc
 };
 
 //These are different aircraft with different stats
-struct test_aircraft_type1 : public c_airc
+struct supermarine_spitfire : public c_airc
 {
-        test_aircraft_type1();
+        supermarine_spitfire();
 };
 
-struct test_aircraft_type2 : public c_airc
+
+struct hawker_typhoon : public c_airc
 {
-        test_aircraft_type2();
+        hawker_typhoon();
+};
+
+
+struct westland_whirlwind : public c_airc
+{
+        westland_whirlwind();
+};
+
+
+struct junker_ju288 : public c_airc
+{
+        junker_ju288();
+};
+
+
+struct arado_ar240 : public c_airc
+{
+        arado_ar240();
+};
+
+
+struct fockerWulf_fw190 : public c_airc
+{
+        fockerWulf_fw190();
 };
 
 //For Tharane! You can now create your various aircraft types usin the stats you gathered
