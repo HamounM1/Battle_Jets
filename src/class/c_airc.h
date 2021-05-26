@@ -1,6 +1,13 @@
 #ifndef C_AIRC_H
 #define C_AIRC_H
 
+#define AIRC_SUPERMARINE_SPITFIRE 0xC0
+#define AIRC_HAWKER_TYPHOON 0xC1
+#define AIRC_WESTLAND_WHIRLWIND 0xC2
+#define AIRC_JUNKER_JU288 0xC3
+#define AIRC_ARADO_AR240 0xC4
+#define AIRC_FOCKERWULF_FW190 0xC5
+
 class c_airc
 {
  protected:

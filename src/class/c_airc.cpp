@@ -28,7 +28,7 @@ float c_airc::getManeuverability()
 
 supermarine_spitfire::supermarine_spitfire()
 {
-    mHealth = 70 ;
+    mHealth = 70;
 
     mVelocityMax = 320.0;
     mClimbRate = 13;
@@ -43,7 +43,7 @@ supermarine_spitfire::supermarine_spitfire()
 
 hawker_typhoon::hawker_typhoon()
 {
-    mHealth = 70;
+    mHealth = 90;
 
     mVelocityMax = 358.0;
     mClimbRate = 13.9f;
@@ -58,7 +58,7 @@ hawker_typhoon::hawker_typhoon()
 
 westland_whirlwind::westland_whirlwind()
 {
-    mHealth = 70;
+    mHealth = 110;
 
     mVelocityMax = 310.0;
     mClimbRate = 8.2f;
@@ -73,7 +73,7 @@ westland_whirlwind::westland_whirlwind()
 
 junker_ju288::junker_ju288()
 {
-    mHealth = 70;
+    mHealth = 110;
 
     mVelocityMax = 354.0;
     mClimbRate = 8.2f;
@@ -88,7 +88,7 @@ junker_ju288::junker_ju288()
 
 arado_ar240:: arado_ar240()
 {
-    mHealth = 70;
+    mHealth = 90;
 
     mVelocityMax = 334.0;
     mClimbRate = 9.1f;

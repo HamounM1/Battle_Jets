@@ -16,6 +16,7 @@
 //C/C++ Standard Libraries
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 //Local includes
 #include "class/c_board.h"
@@ -34,7 +35,7 @@
 
 
 #define ACTION_NOACTION 0xA0	//An action code assigned when no action is taken
-#define ACTION_EXIT 0xAE       //Code to exit the game
+#define ACTION_DESTROYED 0xAF	//When health is 0 or below
 
 #define ACTION_ATTACK 0xA1	    //An action code for primary attack
 #define ACTION_ATTACKSEC 0xA2   //An action code for secondary attack
@@ -43,10 +44,8 @@
 
 
 //Variables
+extern bool stateActive;
 bool stateInit(c_board* target);	//Creates the initial state, returns true on successful initialisation
-//WIP
-//c_pilot pilotPlayer;
-//c_pilot pilotEnemy;
 
 void boardInit();	//Creates the initial board state (sets all tiles to TILE_EMPTY)
 void boardUpdate();	//Updates/draws/prints the current state of the board to STDOUT
