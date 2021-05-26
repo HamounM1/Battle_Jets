@@ -13,11 +13,12 @@ class c_pilot
 
  public:
 	c_pilot();
-	c_pilot(c_airc* target, int type);
 
+    void setAirc(c_airc* target);
     void setType(int type);
 	void setPosition(int posRw, int posCl);
 
+    c_airc* getAirc();
     int getType();
 	int getRw();
 	int getCl();

@@ -1,5 +1,9 @@
 #include "game.h"
 
+//THIS IS A TEST
+//test_aircraft_type1 enemyAircraft;
+//test_aircraft_type2 playerAircraft;
+
 c_board* boardTarget;
 
 c_pilot pilotPlayer;
@@ -10,8 +14,12 @@ bool stateInit(c_board* target)
 	boardTarget = target;
 	boardInit();
 
+	//pilotPlayer.setAirc(&playerAircraft);	//TEST
+
 	pilotPlayer.setType(TILE_PILOT_P);
 	pilotPosition(&pilotPlayer, 5, 0);
+
+	//pilotEnemy.setAirc(&enemyAircraft);		//TEST
 
 	pilotEnemy.setType(TILE_PILOT_E);
 	pilotPosition(&pilotEnemy, 5, 9);

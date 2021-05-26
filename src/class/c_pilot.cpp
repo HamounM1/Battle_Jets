@@ -8,14 +8,9 @@ c_pilot::c_pilot()
     mPosX = 0;
     mPosY = 0;
 }
-
-c_pilot::c_pilot(c_airc* target, int type)
+void c_pilot::setAirc(c_airc* target)
 {
     pAirc = target;
-
-    mTileType = type;
-    mPosX = 0;
-    mPosY = 0;
 }
 
 void c_pilot::setType(int type)
@@ -27,6 +22,11 @@ void c_pilot::setPosition(int posRw, int posCl)
 {
     mPosX = posCl;
     mPosY = posRw;
+}
+
+c_airc* c_pilot::getAirc()
+{
+    return pAirc;
 }
 
 int c_pilot::getType()
