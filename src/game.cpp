@@ -145,6 +145,15 @@ int userGenActionCode()
 		return ACTION_DESTROYED;
 	}
 
+	if(pilotPlayer.getRw() < 0)
+	{
+		return ACTION_RESET_TOP;
+	}
+	else if(pilotPlayer.getRw() > boardTarget->getDimRw())
+	{
+		return ACTION_RESET_BOTTOM;
+	}
+
 	char option;
 	std::cout << "Primary Attack [1]:\nSecondary Attack [2]:\n\nAscend [W]:\nDescend [S]:\nAction: ";
 	std::cin >> option;
@@ -176,6 +185,15 @@ int compGenActionCode()
 	if((pilotEnemy.getAirc())->getHealth() <= 0)
 	{
 		return ACTION_DESTROYED;
+	}
+
+	if(pilotEnemy.getRw() < 0)
+	{
+		return ACTION_RESET_TOP;
+	}
+	else if(pilotEnemy.getRw() > boardTarget->getDimRw())
+	{
+		return ACTION_RESET_BOTTOM;
 	}
 
 	srand(time(0));
@@ -252,6 +270,14 @@ void perfAction(int code, c_pilot* pilotTarget)
 {
 	switch(code)
 	{
+	 case ACTION_RESET_TOP:
+		pilotOffset(pilotTarget, 1, 0);
+		break;
+
+	 case ACTION_RESET_BOTTOM:
+		pilotOffset(pilotTarget, -1, 0);
+		break;
+
 	 case ACTION_NOACTION:
 		break;
 

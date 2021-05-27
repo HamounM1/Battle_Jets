@@ -37,6 +37,9 @@
 #define ACTION_NOACTION 0xA0	//An action code assigned when no action is taken
 #define ACTION_DESTROYED 0xAF	//When health is 0 or below
 
+#define ACTION_RESET_TOP 0xA3
+#define ACTION_RESET_BOTTOM 0xA4
+
 #define ACTION_ATTACK 0xA1	    //An action code for primary attack
 #define ACTION_ATTACKSEC 0xA2   //An action code for secondary attack
 #define ACTION_ASCEND 0xAA		//Action for up
