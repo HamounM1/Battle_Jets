@@ -21,6 +21,10 @@ int main()
 	std::cout << "Damage from attacks are affected by the difference in distance between you and the enemy." << std::endl;
 	std::cout << std::endl;
 	std::cout << "Ascending or descending allows you to avoid more damage." << std::endl;
+	std::cout << "Primary Attack uses your machine guns and secondary attack uses your cannons." << std::endl;
+	std::cout << std::endl;
+	std::cout << "Ensure to keep an eye on your health! Goodluck." << std::endl;
+
 
 	std::cout << "\n\n\nAre you ready to begin? Yes [Y] | No [N] ";
 
